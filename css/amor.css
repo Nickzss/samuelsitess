@@ -7,7 +7,7 @@
 
 body {
     font-family: 'fuente', sans-serif;
-    background: url('fondo.jpg') no-repeat center center fixed;
+    background: url('../ima/fondblack.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     margin: 0;
