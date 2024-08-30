@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'fuentelol';
-    src: url('fuentelol.ttf') format('truetype');
+    font-family: 'fuente';
+    src: url('') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'fuentelol', sans-serif;
+    font-family: 'fuente', sans-serif;
     background: url('fondo.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
