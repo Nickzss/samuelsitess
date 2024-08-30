@@ -5,11 +5,18 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Playwrite Cuba';
+    src: url('PlaywriteCuba.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'fuente', sans-serif;
+    font-family: 'Playwrite Cuba', sans-serif;
     background: url('../ima/fondblack.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #333;
+    color: #fff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,17 +25,17 @@ body {
 }
 
 header {
-    background-color: rgba(135, 206, 250, 0.8);
+    background-color: rgba(255, 165, 0, 0.7); /* Naranja con opacidad */
     padding: 40px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
     margin: 0;
     font-size: 3em;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #000; /* Negro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 main {
@@ -39,17 +46,27 @@ main {
     align-items: center;
     text-align: center;
     padding: 40px;
-    background: rgba(240, 248, 255, 0.9);
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro con opacidad */
     border-radius: 20px;
     margin: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 2em;
+    color: #ffa500; /* Naranja */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 p {
     font-size: 1.7em;
-    color: #444;
+    color: #ffa500; /* Naranja */
     max-width: 600px;
     line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
 }
 
 .gallery {
@@ -60,25 +77,30 @@ p {
 }
 
 .gallery img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.gallery img:hover {
     transform: scale(1.05);
+    margin: 10px;
 }
 
 footer {
-    background-color: rgba(70, 130, 180, 0.8);
+    background-color: rgba(255, 140, 0, 0.7); /* Naranja más oscuro con opacidad */
     padding: 20px;
     text-align: center;
-    color: #fff;
+    color: #000; /* Negro */
     font-size: 1.2em;
-    border-top: 4px solid #5f9ea0;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #ff4500; /* Naranja más intenso */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.marca-especial {
+    font-family: 'fuente';
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+    color: #ffa500; /* Naranja */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
