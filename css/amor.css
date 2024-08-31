@@ -155,3 +155,61 @@ footer {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+/* Asegura que las imágenes en la galería sean responsivas */
+.gallery img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* Ajustes para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .text-content {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .gallery {
+        flex-direction: column; /* Acomoda las imágenes en una columna */
+        align-items: center;
+    }
+
+    .gallery img {
+        max-width: 300px; /* Ajusta el tamaño máximo de las imágenes */
+        margin: 10px 0;
+    }
+
+    .titulo-con-imagen {
+        flex-direction: column; /* Acomoda el título y la imagen en una columna */
+        align-items: center;
+    }
+
+    .mini-photo {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .marca-especial {
+        font-size: 2em;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
