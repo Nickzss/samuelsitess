@@ -212,15 +212,26 @@ footer {
         font-size: 1.5em;
     }
 }
-/* Añadir estilos para el video de fondo */
+/* Estilo para el video de fondo en dispositivos de escritorio */
 #video-background {
     position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -1; /* Envía el video al fondo */
+    z-index: -1;
+    display: block;
 }
 
-/* Mantén el resto de los estilos igual */
+/* Imagen de fondo para dispositivos móviles */
+@media (max-width: 768px) {
+    #video-background {
+        display: none;
+    }
+
+    body {
+        background: url('../ima/walp.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+}
 
