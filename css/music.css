@@ -1,0 +1,192 @@
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'fuente';
+    src: url('fuente.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'co';
+    src: url('co.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'co', sans-serif;
+    color: #ffa500;
+    background-color: #000;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Video de fondo */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    opacity: 0.5;
+}
+
+/* Encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3em;
+    font-family: 'co', cursive;
+    color: #ffa500;
+}
+
+/* Contenido principal */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+}
+
+/* Estilos de cada canción */
+.song {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.song:hover {
+    transform: translateY(-10px);
+}
+
+.song h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Contenedor de imagen y descripción */
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 10px;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Descripción de la canción */
+.song-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffa500;
+    padding: 15px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+.image-container:hover .song-description {
+    transform: translateY(0);
+    background-color: #ffa500;
+    color: #000;
+}
+
+/* Estilos especiales para las canciones favoritas */
+.song[data-title="The Night We Met"] {
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+.song[data-title="This Side of Paradise"] {
+    background-color: rgba(50, 50, 50, 0.8);
+}
+.song[data-title="DannyLux"] {
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+/* Pie de página */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    text-align: center;
+    color: #ffa500;
+    position: relative;
+    z-index: 1;
+    font-size: 1.2em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Marca especial */
+.marca-especial {
+    font-family: 'fuente', cursive;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 4em;
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Responsividad */
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .song h2 {
+        font-size: 1.8em;
+    }
+
+    .song-description {
+        font-size: 1em;
+    }
+
+    .marca-especial {
+        font-size: 3em;
+        bottom: 10px;
+        right: 10px;
+    }
+}

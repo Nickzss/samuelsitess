@@ -1,0 +1,133 @@
+/* Estilos generales */
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'fuente';
+    src: url('fuente.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'co';
+    src: url('co.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'co', sans-serif;
+    overflow: hidden;
+    color: #ffa500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000;
+    position: relative;
+}
+
+/* Video de fondo */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    opacity: 0.6;
+}
+
+/* Título central */
+.center-title {
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+.center-title h1 {
+    font-size: 4em;
+    font-family: 'co', cursive;
+    text-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+}
+
+/* Opciones */
+.options {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.option {
+    text-decoration: none;
+    color: #ffa500;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.option:hover {
+    background-color: rgba(255, 165, 0, 0.9);
+    transform: translateY(-5px);
+}
+
+/* Animación del título */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 20px rgba(255, 165, 0, 1);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    }
+}
+
+/* Marca especial */
+.marca-especial {
+    font-family: 'fuente', cursive;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .center-title h1 {
+        font-size: 3em;
+    }
+
+    .options {
+        flex-direction: column;
+    }
+
+    .option {
+        font-size: 1.2em;
+    }
+
+    .marca-especial {
+        font-size: 2em;
+        bottom: 10px;
+        right: 10px;
+    }
+}
