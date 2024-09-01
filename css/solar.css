@@ -1,0 +1,85 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+}
+
+.solar-system {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffcc00 10%, #ff9900);
+    overflow: hidden;
+}
+
+/* Sol */
+.planet.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Planetas */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+.planet .message {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 3px;
+    display: none;
+}
+
+/* Planetas específicos */
+.mercury {
+    background-image: url('images/mercury.png');
+    animation: orbit 10s linear infinite;
+    transform-origin: 200px center;
+}
+
+.venus {
+    background-image: url('images/venus.png');
+    animation: orbit 20s linear infinite;
+    transform-origin: 300px center;
+}
+
+.earth {
+    background-image: url('images/earth.png');
+    animation: orbit 30s linear infinite;
+    transform-origin: 400px center;
+}
+
+/* Animación de órbita */
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+/* Mostrar mensaje al pasar el cursor */
+.planet:hover .message {
+    display: block;
+}
