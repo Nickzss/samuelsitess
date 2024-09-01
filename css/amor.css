@@ -14,8 +14,7 @@
 
 body {
     font-family: 'co', sans-serif;
-    background: url('../ima/oraNGE12.mp4') no-repeat center center fixed;
-    background-size: cover;
+    background: none; /* Eliminar fondo por defecto */
     color: #fff;
     margin: 0;
     padding: 0;
@@ -212,6 +211,7 @@ footer {
         font-size: 1.5em;
     }
 }
+
 /* Estilo para el video de fondo en dispositivos de escritorio */
 #video-background {
     position: fixed;
@@ -234,4 +234,3 @@ footer {
         background-size: cover;
     }
 }
-
