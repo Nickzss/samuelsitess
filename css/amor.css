@@ -14,7 +14,7 @@
 
 body {
     font-family: 'co', sans-serif;
-    background: url('../ima/fondblack.jpg') no-repeat center center fixed;
+    background: url('../ima/oraNGE12.mp4') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     margin: 0;
@@ -89,10 +89,43 @@ p {
     border-radius: 15px;
 }
 
+/* Estilos anteriores ... */
+
+/* Corrección de color al pasar el cursor en los párrafos */
 p:hover {
-    color: #000; /* Cambia el color del texto a negro */
+    color: #ffa500; /* Cambia el color del texto a naranja */
     box-shadow: 0 0 20px 10px #ffa500; /* Efecto de brillo */
 }
+
+/* Estilos para el título final y los corazones */
+.titulo-final {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.titulo-final h2 {
+    font-size: 2em;
+    color: #ffa500; /* Naranja */
+    margin-bottom: 20px;
+}
+
+.corazones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.corazon {
+    font-size: 3em;
+    color: #ffa500; /* Naranja */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.corazon:hover {
+    color: #ff4500; /* Naranja más intenso al pasar el cursor */
+    transform: scale(1.2); /* Efecto de agrandamiento */
+}
+
 
 /* Galería de imágenes */
 .gallery {
@@ -179,3 +212,15 @@ footer {
         font-size: 1.5em;
     }
 }
+/* Añadir estilos para el video de fondo */
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Envía el video al fondo */
+}
+
+/* Mantén el resto de los estilos igual */
+
