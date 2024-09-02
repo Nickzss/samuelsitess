@@ -190,3 +190,34 @@ footer {
         right: 10px;
     }
 }
+/* Botón de regreso */
+.regreso-container {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    z-index: 2;
+}
+
+.regreso-container h2 {
+    font-family: 'co', sans-serif;
+    color: #ffa500;
+    margin-bottom: 20px;
+}
+
+.boton-regreso {
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: 'co', sans-serif;
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #ff8c00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.8);
+    text-decoration: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.boton-regreso:hover {
+    box-shadow: 0 0 30px rgba(255, 140, 0, 1);
+    transform: scale(1.05);
+}

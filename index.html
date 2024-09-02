@@ -28,13 +28,32 @@
     <div class="second-title-container">
         <h2 class="second-title">Son Sorpresa, Elige el que te llame la atención</h2>
         <div class="options">
-            <a href="favoritemusic.html" class="option purple-pink">???</a>
-            <a href="timetogether.html" class="option gray-white">???</a>
-            <a href="pagina4.html" class="option orange-yellow">???</a>
+            <a href="favoritemusic.html" class="option purple-pink" data-visited="false">???</a>
+            <a href="timetogether.html" class="option gray-white" data-visited="false">???</a>
+            <a href="solarsystemlov.html" class="option orange-yellow" data-visited="false">???</a>
         </div>
     </div>
 
     <!-- Marca especial -->
     <div class="marca-especial">S♥</div>
-</body>
-</html>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const options = document.querySelectorAll('.option');
+    
+            options.forEach(option => {
+                // Verifica si el enlace ya ha sido visitado
+                if (localStorage.getItem(option.getAttribute('href'))) {
+                    option.classList.add('visited');
+                }
+    
+                option.addEventListener('click', () => {
+                    // Marca el enlace como visitado en el almacenamiento local
+                    localStorage.setItem(option.getAttribute('href'), 'visited');
+                    option.classList.add('visited');
+                });
+            });
+        });
+        </script>
+    </body>
+    </html>

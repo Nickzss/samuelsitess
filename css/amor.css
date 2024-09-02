@@ -1,3 +1,5 @@
+/* Estilos generales */
+/* Fuentes personalizadas */
 @font-face {
     font-family: 'fuente';
     src: url('fuente.ttf') format('truetype');
@@ -12,216 +14,228 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'co', sans-serif;
-    background: url('../ima/oraNGE12.mp4') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'co', sans-serif;
+    overflow: hidden;
+    color: #ffa500;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
+    background-color: #000;
+    position: relative;
 }
 
-header {
-    background-color: rgba(255, 166, 0, 0.938);
-    padding: 40px;
+/* Video de fondo */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    opacity: 0.6;
+}
+
+/* Título central */
+.center-title {
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
 }
 
-h1 {
-    margin: 0;
-    font-size: 3em;
-    color: #000;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+.center-title h1 {
+    font-size: 4em;
+    font-family: 'co', cursive;
+    text-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
 }
 
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Títulos adicionales */
+.sub-title-container, .second-title-container {
     text-align: center;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
 }
 
-.text-content {
-    width: 100%;
-    max-width: 800px;
+.sub-title, .second-title {
+    font-size: 2.5em;
+    font-family: 'co', cursive;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
 }
 
-.titulo-con-imagen {
+/* Enlaces */
+.sub-option {
+    text-decoration: none;
+    color: #ffa500;
+    font-size: 2.0em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.sub-option:hover {
+    background-color: rgba(255, 165, 0, 0.9);
+    transform: translateY(-5px);
+}
+
+/* Opciones */
+.options {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.mini-photo {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-h2 {
-    font-size: 2em;
-    color: #ffa500;
-    margin: 0;
-}
-
-p {
-    font-size: 1.7em;
-    color: #ffa500;
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    text-align: justify;
-    transition: color 0.3s ease, box-shadow 0.3s ease;
-    padding: 10px;
-    border-radius: 15px;
-}
-
-p:hover {
-    color: #ffa500;
-    box-shadow: 0 0 20px 10px #ffa500;
-}
-
-.titulo-final {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.titulo-final h2 {
-    font-size: 2em;
-    color: #ffa500;
-    margin-bottom: 20px;
-}
-
-.corazones {
-    display: flex;
-    justify-content: center;
     gap: 20px;
-}
-
-.corazon {
-    font-size: 3em;
-    color: #ffa500;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.corazon:hover {
-    color: #ff4500;
-    transform: scale(1.2);
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
-    gap: 10px;
     margin-top: 20px;
 }
 
-.gallery img {
-    width: 150px;
-    height: 150px;
-    transform: scale(1.05);
-    margin: 10px;
+.option {
+    text-decoration: none;
+    font-size: 2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffa500; /* Color por defecto de los ??? */
+    font-family: 'fuente', cursive;
     position: relative;
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Asegura que el texto no sobresalga */
 }
 
-.gallery img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.3);
-    box-shadow: 0 0 20px 10px #ffa500;
+/* Marcos de colores con animación de borde */
+.purple-pink {
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5), 0 0 10px rgba(255, 105, 180, 0.5);
+    animation: pulse-border-purple-pink 2s infinite;
 }
 
-.gallery img:nth-child(2) {
-    height: 200px;
+.gray-white {
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: pulse-border-gray-white 2s infinite;
 }
 
-footer {
-    background-color: rgba(255, 140, 0, 0.7);
-    padding: 20px;
-    text-align: center;
-    color: #000;
-    font-size: 1.2em;
-    border-top: 4px solid #ff4500;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+.orange-yellow {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 10px rgba(255, 255, 0, 0.5);
+    animation: pulse-border-orange-yellow 2s infinite;
 }
 
+/* Estilos para los enlaces visitados */
+.option.visited {
+    background-color: green; /* Color verde para marcar como visitado */
+    color: white; /* Color del texto en verde para contraste */
+    box-shadow: none; /* Opcional: eliminar el box-shadow para los elementos visitados */
+}
+
+/* Animaciones de borde */
+@keyframes pulse-border-purple-pink {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(128, 0, 128, 1), 0 0 10px rgba(255, 105, 180, 1);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(128, 0, 128, 0.5), 0 0 10px rgba(255, 105, 180, 0.5);
+    }
+}
+
+@keyframes pulse-border-gray-white {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(128, 128, 128, 1), 0 0 10px rgba(255, 255, 255, 1);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(128, 128, 128, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes pulse-border-orange-yellow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 165, 0, 1), 0 0 10px rgba(255, 255, 0, 1);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 10px rgba(255, 255, 0, 0.5);
+    }
+}
+
+/* Animación del título */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 20px rgba(255, 165, 0, 1);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    }
+}
+
+/* Marca especial */
 .marca-especial {
-    font-family: 'fuente';
+    font-family: 'fuente', cursive;
     position: fixed;
     bottom: 20px;
     right: 20px;
     font-size: 3em;
     color: #ffa500;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+    z-index: 2;
+    pointer-events: none;
 }
 
-@media (max-width: 768px) {
-    .titulo-con-imagen {
+/* Contenedor y estilos del botón adicional */
+.sub-title-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sub-option {
+    text-decoration: none;
+    color: #ffa500;
+    font-size: 2.0em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.sub-option:hover {
+    background-color: rgba(255, 165, 0, 0.9);
+    transform: translateY(-5px);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .center-title h1 {
+        font-size: 3em;
+    }
+
+    .sub-title, .second-title {
+        font-size: 2em;
+    }
+
+    .options {
         flex-direction: column;
     }
 
-    .mini-photo {
-        margin-bottom: 10px;
-    }
-
-    .gallery {
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-
-    .gallery img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .gallery img:nth-child(2) {
-        height: 150px;
-    }
-
-    p {
+    .option {
         font-size: 1.2em;
     }
 
-    h2 {
-        font-size: 1.5em;
-    }
-}
-
-#video-background {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    #video-background {
-        display: none;
-    }
-
-    body {
-        background: url('../ima/walp.jpg') no-repeat center center fixed;
-        background-size: contain;
+    .marca-especial {
+        font-size: 2em;
+        bottom: 10px;
+        right: 10px;
     }
 }

@@ -173,6 +173,26 @@ body {
     box-shadow: 0 0 10px rgba(255, 165, 0, 1), 0 0 10px rgba(255, 255, 0, 1);
 }
 
+/* Marca especial */
+.marca-especial {
+    font-family: 'fuente', cursive;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Estilos para los enlaces visitados */
+.option.visited {
+    background-color: green; /* Color verde para marcar como visitado */
+    color: white; /* Color del texto en verde para contraste */
+    box-shadow: none; /* Opcional: eliminar el box-shadow para los elementos visitados */
+}
+
 /* Animación del título */
 @keyframes pulse {
     0% {
@@ -187,19 +207,6 @@ body {
         opacity: 1;
         text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
     }
-}
-
-/* Marca especial */
-.marca-especial {
-    font-family: 'fuente', cursive;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 3em;
-    color: #ffa500;
-    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
-    z-index: 2;
-    pointer-events: none;
 }
 
 /* Responsividad */
