@@ -12,18 +12,15 @@
         <source src="ima/" type="video/mp4">
         Tu navegador no soporta la etiqueta de video.
     </video>
-
     <!-- Título central -->
     <div class="center-title">
         <h1>Bienvenido Corazón</h1>
     </div>
-
     <!-- Enlace bajo el título central -->
     <div class="sub-title-container">
         <h2 class="sub-title">Comienza por aquí</h2>
         <a href="youandme.html" class="sub-option">Reasons</a>
     </div>
-
     <!-- Segundo título y enlaces -->
     <div class="second-title-container">
         <h2 class="second-title">Son Sorpresa, Elige el que te llame la atención</h2>
@@ -33,27 +30,49 @@
             <a href="solarsystemlov.html" class="option orange-yellow" data-visited="false">???</a>
         </div>
     </div>
-
+    <!-- Nuevo título y botón (inicialmente ocultos) -->
+    <div id="new-content-1" class="new-content" style="display: none;">
+        <h2 class="new-title">¡Sorpresa adicional!</h2>
+        <a href="galeryoflove.html" class="sub-option">Descubre más</a>
+    </div>
+    <!-- Segundo nuevo título y botón (inicialmente ocultos) -->
+    <div id="new-content-2" class="new-content" style="display: none;">
+        <h2 class="new-title">Una última sorpresa</h2>
+        <a href="galeryoflove.html" class="sub-option">Revelación final</a>
+    </div>
     <!-- Marca especial -->
     <div class="marca-especial">S♥</div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const options = document.querySelectorAll('.option');
-    
+            const newContent1 = document.getElementById('new-content-1');
+            const newContent2 = document.getElementById('new-content-2');
+   
+            function checkAllVisited() {
+                const allVisited = Array.from(options).every(option => 
+                    localStorage.getItem(option.getAttribute('href')) === 'visited'
+                );
+                if (allVisited) {
+                    newContent1.style.display = 'block';
+                    newContent2.style.display = 'block';
+                }
+            }
+   
             options.forEach(option => {
-                // Verifica si el enlace ya ha sido visitado
                 if (localStorage.getItem(option.getAttribute('href'))) {
                     option.classList.add('visited');
                 }
-    
+   
                 option.addEventListener('click', () => {
-                    // Marca el enlace como visitado en el almacenamiento local
                     localStorage.setItem(option.getAttribute('href'), 'visited');
                     option.classList.add('visited');
+                    checkAllVisited();
                 });
             });
+   
+            // Comprobar al cargar la página si todos ya han sido visitados
+            checkAllVisited();
         });
-        </script>
-    </body>
-    </html>
+    </script>
+</body>
+</html>

@@ -79,11 +79,11 @@ h2 {
 
 p {
     font-size: 1.7em;
-    color: #ffa500;
+    color: #000000;
     max-width: 600px;
     line-height: 1.6;
     margin-bottom: 30px;
-    text-align: justify;
+    text-align: center;
     transition: color 0.3s ease, box-shadow 0.3s ease;
     padding: 10px;
     border-radius: 15px;
@@ -160,6 +160,20 @@ footer {
     border-top: 4px solid #ff4500;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
 }
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 20px rgba(255, 165, 0, 1);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    }
+}
 
 .marca-especial {
     font-family: 'fuente';
@@ -173,6 +187,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    animation: pulse 2s infinite;
 }
 
 @media (max-width: 768px) {

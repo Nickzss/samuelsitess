@@ -61,12 +61,12 @@ body {
 }
 
 /* Títulos adicionales */
-.sub-title-container, .second-title-container {
+.sub-title-container, .second-title-container, .new-content {
     text-align: center;
     margin-top: 30px;
 }
 
-.sub-title, .second-title {
+.sub-title, .second-title, .new-title {
     font-size: 2.5em;
     font-family: 'co', cursive;
     text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
@@ -84,6 +84,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    display: inline-block;
 }
 
 .sub-option:hover {
@@ -105,12 +106,12 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.7);
-    color: #ffa500; /* Color por defecto de los ??? */
+    color: #ffa500;
     font-family: 'fuente', cursive;
     position: relative;
     display: inline-block;
     transition: color 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Asegura que el texto no sobresalga */
+    overflow: hidden;
 }
 
 /* Marcos de colores con animación de borde */
@@ -131,9 +132,9 @@ body {
 
 /* Estilos para los enlaces visitados */
 .option.visited {
-    background-color: green; /* Color verde para marcar como visitado */
-    color: white; /* Color del texto en verde para contraste */
-    box-shadow: none; /* Opcional: eliminar el box-shadow para los elementos visitados */
+    background-color: green;
+    color: white;
+    box-shadow: none;
 }
 
 /* Animaciones de borde */
@@ -191,28 +192,29 @@ body {
     text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
     z-index: 2;
     pointer-events: none;
+    animation: pulse 2s infinite;
 }
 
-/* Contenedor y estilos del botón adicional */
-.sub-title-container {
+/* Estilos para los nuevos contenidos */
+/* Estilos para los nuevos contenidos */
+.new-content {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    animation: fadeIn 1s ease-in;
 }
 
-.sub-option {
-    text-decoration: none;
-    color: #ffa500;
-    font-size: 2.0em;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.7);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+.new-title {
+    font-size: 3.5em;
+    font-family: 'co', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    margin-bottom: 10px;
+    animation: pulse 2s infinite; /* Asegúrate de que la animación pulse esté aquí */
 }
 
-.sub-option:hover {
-    background-color: rgba(255, 165, 0, 0.9);
-    transform: translateY(-5px);
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsividad */
@@ -221,7 +223,7 @@ body {
         font-size: 3em;
     }
 
-    .sub-title, .second-title {
+    .sub-title, .second-title, .new-title {
         font-size: 2em;
     }
 
@@ -237,5 +239,9 @@ body {
         font-size: 2em;
         bottom: 10px;
         right: 10px;
+    }
+
+    .sub-option {
+        font-size: 1.5em;
     }
 }
