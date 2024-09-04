@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia</title>
+    <link rel="stylesheet" href="css/time2.css">
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="ima/fd.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+     
+    <header>
+        <h1>Nuestra Historia</h1>
+        <h1>Pasa tu mouse por cada mes..</h1>
+    </header>
+    
+    <main>
+        <div class="timeline">
+            <div class="event">
+                <h2>January</h2>
+                <div class="event-info">
+                    <p>Recuerdas Mi niño? cuando nos conocimos, aquel 10 de enero, hermosisimo dia, conocí a mi persona ideal ese día, agradezco tanto a Dios averte conocido,  y despues un 18 de enero, empezamos nuestra verdadera aventura!!, algo tan especial!..❤️,jajaj quien diria que despues de semanas de conocernos ibamos a hacernos pareja, algo epico, fue un inicio lindo pero te costaba expresarte, te daba verguenza y nervios aww! que lindo eres y eras, me decias solo "bb" jsjjs porque te daba penita pero era lindo aunque te costara se que lo hacias con amor de principiante, algo muy bonito y unico!..fue un gran comienzo</p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>February</h2>
+                <div class="event-info">
+                    <p>Primer Mes de estar juntos, hermoso 14 de febrero que estuvimos juntos, reiamos jugabamos dbr recuerdas? seguiamos viciados! jssjs, me regalaste los robux..aun sigo con pena de eso...😿, te costaba mucho expresarte fue un comienzo dificil.. pero yo te empecé a enseñar como amar, un mensajito que me mandaste con amor, que me quedo muy bien grabado! "Hay en serio que linda persona eres bb eres muy importante para mi y siempre lo seras te quiero mucho mi amor por ti es completamente sincero todos los días pienso en ti eres la única persona que me hace sentir feliz te quiero mucho diego" me encantó me flechaste enteramente con tu amor ❤️✨</p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>March</h2>
+                <div class="event-info">
+                    <p>Segundo mes o tercero? ni idea pero estabamos genial poco a poco ibas soltandote, me empezaste a decir amor!! que lindo mi bebe hermoso, fue un buen mes exceptuando por lo que sucedio (se que no deberiamos recordar eso..pero es parte de nuestra historia) como te decia.. fue un gran mes! exquisito pasamos noches dias hablando te apoye en lo que necesitabas aunque aun a ti te daba pena que yo te ayudara, pero yo insistia! me querias dar mas robux.. dios que bueno que no me los diste jsjsj, te ayude a solucionar problemas y contra restarlos como siempre lo e hecho contigo!, cada vez mi corazon se sentia mas amado por ti, por mi amor ideal..❤️✨</p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>April</h2>
+                <div class="event-info">
+                    <p>Este fue un Mes de Pensamiento.. (cronologicamente no cuenta amorcito), pero este mes fue mas que todo de pensamientos de cada uno, tu te agobiaste... decidiste alejar de mi para que yo buscara a alguien "mejor", pero no, te dejo unos de mis pensamientos que tenia en ese mes:[Que le habra pasado a Francisco?,Estara Bien Sin Mi?,Aun lo extraño...,Siento un amor profundo por el..,No puedo dejarte ir, No no te dejare ir!.]</p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>May</h2>
+                <div class="event-info">
+                    <p>Volvimos!!, te escribi para tu cumpleaños con mucho amor, empezamos a hablar de nuevo, la flor de nuestro amor empezo a renacer de nuevo...de estar marchita paso a volver a nacer mejor!, mas linda mas confianza.. mi niño este fue un buen mes!, te prometi ayudarte!, ese mes el 30 volvimos! cada vez que leo ese mensaje te juro que lloro, en el momento que estoy escribiendo esto ya tengo lagrimas..[3.09.2024 alas 12:32 a.m], volvimos y empezamos a amarnos más y más! prometiste cambiar y lo haz hecho hasta el dia de hoy mi bombon hermoso..❤️✨, cada dia mejoras más.. </p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>June</h2>
+                <div class="event-info">
+                    <p>Cuarto Mes (No cronologicamente) </p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>July</h2>
+                <div class="event-info">
+                    <p>Had an adventure in July.</p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>August</h2>
+                <div class="event-info">
+                    <p>Spent quality time together in August.</p>
+                </div>
+            </div>
+            <div class="event">
+                <h2>September</h2>
+                <div class="event-info">
+                    <p>Our first meeting in January.</p>
+                </div>
+            <!-- Añadir más meses si es necesario -->
+        </div>
+        <a href="index.html" class="return-button">Vuelve..</a>
+    </main>
+    
+    <footer>
+        <p>Aun Falta Sigue Nuestra Historia de Amor..</p>
+    </footer>
+    <div class="marca-especial">S♥</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const events = document.querySelectorAll('.event h2');
+            let activeInfo = null;
+    
+            events.forEach(event => {
+                event.addEventListener('mouseenter', function() {
+                    if (activeInfo) {
+                        activeInfo.classList.add('hiding');
+                    }
+                    const info = this.nextElementSibling;
+                    info.classList.remove('hiding');
+                    activeInfo = info;
+                });
+            });
+    
+            document.addEventListener('mouseover', function(e) {
+                if (!e.target.closest('.event h2') && !e.target.closest('.event-info')) {
+                    if (activeInfo) {
+                        activeInfo.classList.add('hiding');
+                        activeInfo = null;
+                    }
+                }
+            });
+        });
+        </script>
+    </body>
+    </html>
+</body>
+</html>
