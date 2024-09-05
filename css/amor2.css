@@ -55,11 +55,15 @@ main {
 .text-content {
     width: 100%;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .titulo-con-imagen {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -75,11 +79,12 @@ h2 {
     font-size: 2em;
     color: #ffa500;
     margin: 0;
+    text-align: center;
 }
 
 p {
     font-size: 1.7em;
-    color: #000000;
+    color: #ff7b00;
     max-width: 600px;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -87,6 +92,8 @@ p {
     transition: color 0.3s ease, box-shadow 0.3s ease;
     padding: 10px;
     border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p:hover {
@@ -148,18 +155,19 @@ p:hover {
 }
 
 .gallery img:nth-child(2) {
-    height: 250px;
+    height: 150px;
 }
 
 footer {
     background-color: rgba(255, 140, 0, 0.7);
     padding: 20px;
     text-align: center;
-    color: #000;
+    color: #ff3c00;
     font-size: 1.2em;
     border-top: 4px solid #ff4500;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
 }
+
 @keyframes pulse {
     0% {
         opacity: 1;
@@ -210,7 +218,7 @@ footer {
     }
 
     .gallery img:nth-child(2) {
-        height: 150px;
+        height: 50px;
     }
 
     p {
@@ -231,7 +239,6 @@ footer {
     z-index: -1;
 }
 
-/* Nuevos estilos para animación de despliegue */
 .section {
     opacity: 0;
     transform: translateY(20px);

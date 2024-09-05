@@ -19,15 +19,21 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 #bg-video {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     min-width: 100%;
     min-height: 100%;
+    width: auto;
+    height: auto;
     z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
     object-fit: cover;
+    background-size: cover;
+    background-position: center center;
 }
 header {
     background-color: rgba(0, 0, 0, 0.5);
@@ -71,6 +77,8 @@ main {
     flex: 1;
     padding: 20px;
     position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .timeline {
     position: relative;
@@ -88,7 +96,7 @@ main {
     margin-bottom: 5px;
     cursor: pointer;
     transition: color 0.3s ease;
-    display: inline-block; /* Hace que el área clickeable se ajuste al contenido */
+    display: inline-block;
 }
 .event h2:hover {
     color: #ff4500;
@@ -107,20 +115,20 @@ main {
     max-width: 800px;
     height: 60vh;
     color: #ffa500;
-    font-size: 1.6em;
+    font-size: 1.4em;
     line-height: 1.6em;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
     overflow-y: auto;
-    pointer-events: none; /* Evita que el cuadro interfiera con los clics */
+    pointer-events: none;
 }
 .event h2:hover + .event-info,
 .event-info:hover {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
-    pointer-events: auto; /* Permite interacciones cuando es visible */
+    pointer-events: auto;
     transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
 }
 .event-info.hiding {
@@ -133,7 +141,7 @@ main {
     content: '';
     position: absolute;
     left: -10px;
-    top: 7px; /* Ajustado para alinear con el título */
+    top: 7px;
     width: 16px;
     height: 16px;
     background-color: #ffa500;
@@ -153,20 +161,23 @@ main {
     border-radius: 10px;
     transition: all 0.3s ease;
 }
-
 .return-button:hover {
     background-color: #ff8c00;
     box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
     transform: translateY(-3px);
 }
-
 footer {
     background-color: #ffa500;
     color: #000;
     padding: 20px;
     text-align: center;
     width: 100%;
+    box-sizing: border-box;
+    font-size: 37.0px;
 }
-footer {
-font-size: 37.0px;
+
+@media screen and (max-width: 1702px) {
+    footer {
+        width: 100%;
+    }
 }
