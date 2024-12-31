@@ -1,0 +1,83 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Mensaje de Amor</title>
+    <link rel="stylesheet" href="css/thank.css">
+</head>
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="ima/black.gif" type="video/gift">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+    <div class="background-overlay"></div>
+
+    <div class="content-wrapper">
+        <div class="message-container">
+            Bueno, hasta aqui llego tu aventura por estas hermosas paginas que fueron creadas desde 0 con mucho amor, sin ti nunca esto se hubiera hecho realidad, esto todo esto! nunca hubiera hecho nada de esto, si tu no aparecias en mi vida, espero haya sido de tu agrado las paginas que me tomaron alrededor de 3 meses de trabajo!, me tome el tiempo de recopilar cualquier cosa que te gustara para añadirla a estas paginas y hacerlas unicas a como eres tú, si tú eres unico mi amor hermoso 🧡, nunca habia hecho un detalle asi a alguien, solo tu haz sido el primer y digno de mi tiempo para recibir un trabajo con mucho amor de mi corazón,oh y.. abajo hay una flor para otra flor jsjs :3
+        </div>
+
+        <div class="rose-container">
+            <div class="rose">
+                <!-- Centro de la rosa -->
+                <div class="center">
+                    <div class="center-part"></div>
+                </div>
+                
+                <!-- Pétalos internos -->
+                <div class="petals petals-1"></div>
+                <div class="petals petals-2"></div>
+                <div class="petals petals-3"></div>
+                <div class="petals petals-4"></div>
+                <div class="petals petals-5"></div>
+                
+                <!-- Pétalos externos -->
+                <div class="outer-petals petals-6"></div>
+                <div class="outer-petals petals-7"></div>
+                <div class="outer-petals petals-8"></div>
+                
+                <!-- Sépalos -->
+                <div class="sepals">
+                    <div class="sepal sepal-1"></div>
+                    <div class="sepal sepal-2"></div>
+                    <div class="sepal sepal-3"></div>
+                    <div class="sepal sepal-4"></div>
+                    <div class="sepal sepal-5"></div>
+                </div>
+                
+                <!-- Tallo y hojas -->
+                <div class="stem">
+                    <div class="thorns">
+                        <div class="thorn thorn-1"></div>
+                        <div class="thorn thorn-2"></div>
+                        <div class="thorn thorn-3"></div>
+                    </div>
+                    <div class="leaves">
+                        <div class="leaf leaf-1"></div>
+                        <div class="leaf leaf-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="marca-especial">S♥</div>
+
+    <script>
+        function createFloatingHearts() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '🧡';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createFloatingHearts, 300);
+    </script>
+</body>
+</html>

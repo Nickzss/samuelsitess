@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'fuente';
+    src: url('fuente.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'co';
+    src: url('co.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes floatingHeart {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 10px rgba(255, 165, 0, 0.8); }
+    50% { text-shadow: 0 0 20px rgba(255, 165, 0, 1); }
+    100% { text-shadow: 0 0 10px rgba(255, 165, 0, 0.8); }
+}
+
+@keyframes roseGlow {
+    0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); }
+    50% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    font-family: 'co', sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Nuevo estilo para el fondo con GIF */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../ima/black.gif'); /* Reemplaza con la ruta de tu GIF */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Overlay semi-transparente para mejorar la legibilidad */
+    z-index: -1;
+}
+
+/* El resto de los estilos se mantienen igual... */
+
+.message-container {
+    background: rgba(0, 0, 0, 0.8); /* Aumentado la opacidad para mejor legibilidad sobre GIF */
+    /* ... resto de las propiedades ... */
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.message-container {
+    max-width: 800px;
+    margin: 20px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    color: #ff7b00;
+    font-size: 1.3em;
+    line-height: 1.6;
+    text-align: center;
+    z-index: 1;
+    transition: box-shadow 0.3s ease;
+}
+
+.message-container:hover {
+    box-shadow: 0 0 50px rgba(255, 165, 0, 0.8);
+}
+
+/* Rosa */
+.rose-container {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.rose {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    animation: roseGlow 3s infinite;
+}
+
+.center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #cc0033;
+    border-radius: 50%;
+    top: 60px;
+    left: 60px;
+    z-index: 10;
+}
+
+.center-part {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #990033, #cc0033);
+    border-radius: 50%;
+}
+
+.petals {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #ff1a1a 0%, #cc0033 100%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.petals-1 { transform: rotate(0deg) scale(0.8); opacity: 0.9; }
+.petals-2 { transform: rotate(45deg) scale(0.85); opacity: 0.85; }
+.petals-3 { transform: rotate(90deg) scale(0.9); opacity: 0.8; }
+.petals-4 { transform: rotate(135deg) scale(0.95); opacity: 0.75; }
+.petals-5 { transform: rotate(180deg) scale(1); opacity: 0.7; }
+
+.outer-petals {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #ff3333 0%, #cc0033 100%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.petals-6 { transform: rotate(20deg) scale(1.1); opacity: 0.65; }
+.petals-7 { transform: rotate(70deg) scale(1.2); opacity: 0.6; }
+.petals-8 { transform: rotate(120deg) scale(1.3); opacity: 0.55; }
+
+.sepals {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sepal {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background: #006600;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    bottom: -30px;
+}
+
+.sepal-1 { transform: rotate(-10deg); left: 65px; }
+.sepal-2 { transform: rotate(10deg); left: 65px; }
+.sepal-3 { transform: rotate(-30deg); left: 55px; }
+.sepal-4 { transform: rotate(30deg); left: 75px; }
+.sepal-5 { transform: rotate(0deg); left: 65px; z-index: -1; }
+
+.stem {
+    position: absolute;
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(to right, #004d00, #008000);
+    top: 160px;
+    left: 75px;
+}
+
+.thorns {
+    position: relative;
+    height: 100%;
+}
+
+.thorn {
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    background: #004d00;
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+}
+
+.thorn-1 { top: 40px; right: -15px; }
+.thorn-2 { top: 100px; left: -15px; transform: scaleX(-1); }
+.thorn-3 { top: 160px; right: -15px; }
+
+.leaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.leaf {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background: linear-gradient(to bottom right, #008000, #004d00);
+    border-radius: 0 50% 50% 50%;
+}
+
+.leaf-1 {
+    transform: rotate(-30deg);
+    top: 80px;
+    left: -45px;
+}
+
+.leaf-2 {
+    transform: rotate(160deg);
+    top: 130px;
+    right: -45px;
+}
+
+.floating-heart {
+    position: absolute;
+    color: #ffa500;
+    font-size: 2em;
+    pointer-events: none;
+    animation: floatingHeart 3s infinite ease-in-out;
+}
+
+.marca-especial {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+    color: #ffa500;
+    font-family: 'fuente', cursive;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        gap: 30px;
+    }
+    
+    .rose-container {
+        transform: scale(0.8);
+    }
+
+    .message-container {
+        font-size: 1.2em;
+        padding: 20px;
+    }
+}
