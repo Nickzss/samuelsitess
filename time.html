@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="css/time2.css">
     <link rel="icon" href="ima/skele.png" type="image/x-icon">
 <body>
+    <!-- Fondo colorido simple -->
+    <div class="galaxy-bg"></div>
+    
+    <!-- Estrellas bonitas -->
+    <div class="stars" id="stars"></div>
+    
     <video autoplay muted loop id="bg-video">
         <source src="ima/fd.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
     </video>
+    
+    <!-- Overlay para cerrar modal -->
+    <div class="overlay" id="overlay"></div>
      
     <header>
         <h1>Nuestra Historia</h1>
-        <h1>Pasa tu mouse por cada mes..</h1>
+        <h1>Toca cada mes para conocer nuestra historia..</h1>
     </header>
     
     <main>
@@ -22,7 +31,7 @@
             <div class="event">
                 <h2>January</h2>
                 <div class="event-info">
-                    <p>Recuerdas Mi niño? cuando nos conocimos, aquel 10 de enero, hermosisimo dia, conocí a mi persona ideal ese día, agradezco tanto a Dios averte conocido,  y despues un 18 de enero, empezamos nuestra verdadera aventura!!, algo tan especial!..❤️,jajaj quien diria que despues de semanas de conocernos ibamos a hacernos pareja, algo epico, fue un inicio lindo pero te costaba expresarte, te daba verguenza y nervios aww! que lindo eres y eras, me decias solo "bb" jsjjs porque te daba penita pero era lindo aunque te costara se que lo hacias con amor de principiante, algo muy bonito y unico!..fue un gran comienzo</p>
+                    <p>Recuerdas Mi niño? cuando nos conocimos, aquel 10 de enero, hermosisimo dia, conocí a mi persona ideal ese día, agradezco tanto a Dios averte conocido, y despues un 18 de enero, empezamos nuestra verdadera aventura!!, algo tan especial!..❤️,jajaj quien diria que despues de semanas de conocernos ibamos a hacernos pareja, algo epico, fue un inicio lindo pero te costaba expresarte, te daba verguenza y nervios aww! que lindo eres y eras, me decias solo "bb" jsjjs porque te daba penita pero era lindo aunque te costara se que lo hacias con amor de principiante, algo muy bonito y unico!..fue un gran comienzo</p>
                 </div>
             </div>
             <div class="event">
@@ -73,18 +82,18 @@
                     <p>Esto...nos enseñon a los dos a aprender cosas del otro, el distanciamineto nos enseño que no podemos vivir uno sin el otro, somos dos almas gemelas muy unidas, que apesar de las cosas que suceden podemos seguir estando juntos pese alas advercidades! alguien muy especial para mi nunca dejaría que se fuera de mi vida porque es algo que me marca para siempre y nunca te dejare ir.. este mes no es relevante en la relación pero aun asi recuerdalo como un momento donde pensamos las cosas cada uno por su lado encontramos soluciones para cosas, mis mensajes siempre iban con el mayor cariño de mi corazón cada dia me daba el tiempo y dedicación para escribirlos y que supieras lo que mi corazón sentia y siente por ti, un amor intenso y muy muy duradero ❤️ </p>
                 </div>
             </div>
-                <div class="event">
-                    <h2>October</h2>
-                    <div class="event-info">
-                        <p>Un mes que fue similar a el anterior, pero eso no quita que nosotros hayamos podido mejorar por nuestros lados como dije antes!, recuerda que a pesar de las dificultades pudiste salir adelante por este tiempo, fue un desafio pero valio totalmente la pena que hayas dado cada dia de tu vida para esforzarte y lograr continuar, las frases motivadoras de mi parte, nunca sesaron siepre cada dia intentaba escribirte con lo que me salía del corazón para ti,  desde cosas tan sencillas a palabras mas conplejas pero siemmpre deseandote lo mejor a tu vida! obviamente la motivación nunca seso hasta que...</p>
-                    </div>
+            <div class="event">
+                <h2>October</h2>
+                <div class="event-info">
+                    <p>Un mes que fue similar a el anterior, pero eso no quita que nosotros hayamos podido mejorar por nuestros lados como dije antes!, recuerda que a pesar de las dificultades pudiste salir adelante por este tiempo, fue un desafio pero valio totalmente la pena que hayas dado cada dia de tu vida para esforzarte y lograr continuar, las frases motivadoras de mi parte, nunca sesaron siepre cada dia intentaba escribirte con lo que me salía del corazón para ti, desde cosas tan sencillas a palabras mas conplejas pero siemmpre deseandote lo mejor a tu vida! obviamente la motivación nunca seso hasta que...</p>
+                </div>
             </div>
-                    <div class="event">
-                        <h2>November</h2>
-                        <div class="event-info">
-                            <p>Volviste!!! el mejor segundo mes de nuestra relacion, aunque haya costado tus esfuerzos valian la pena, lograste superar los obstaculos sin mi por un tiempo pero entre los dos sabiamos perfectamente que no podiamos seguir muy lejos del uno del otro, el amor nos volvió a juntar!!!, en ese momento me sentía tan feliz de haberte tenido de regreso, eso significaba mucho para mi, eso hizo que mi vida volviera a tener sentido, el amor de mi vida regreso!!!, fue algo tan emotivo que llore y me emocioné ala vez!!! Te amo mucho precioso gracias por tus esfuerzos!!! 🧡</p>
-                        </div>
-                
+            <div class="event">
+                <h2>November</h2>
+                <div class="event-info">
+                    <p>Volviste!!! el mejor segundo mes de nuestra relacion, aunque haya costado tus esfuerzos valian la pena, lograste superar los obstaculos sin mi por un tiempo pero entre los dos sabiamos perfectamente que no podiamos seguir muy lejos del uno del otro, el amor nos volvió a juntar!!!, en ese momento me sentía tan feliz de haberte tenido de regreso, eso significaba mucho para mi, eso hizo que mi vida volviera a tener sentido, el amor de mi vida regreso!!!, fue algo tan emotivo que llore y me emocioné ala vez!!! Te amo mucho precioso gracias por tus esfuerzos!!! 🧡</p>
+                </div>
+            </div>
         </div>
         <a href="index.html" class="return-button">Vuelve..</a>
     </main>
@@ -93,34 +102,102 @@
         <p>Aun Falta Sigue Nuestra Historia de Amor..</p>
     </footer>
     <div class="marca-especial">S♥</div>
-    <script src="js/amor2.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const events = document.querySelectorAll('.event h2');
-            let activeInfo = null;
     
+    <script>
+        // Crear estrellitas bonitas en movimiento
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 60;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Diferentes tamaños de estrellas
+                const size = Math.random();
+                let starSize, starClass;
+                
+                if (size < 0.7) {
+                    starSize = Math.random() * 1.5 + 0.8; // Pequeñas
+                    starClass = 'small';
+                } else if (size < 0.9) {
+                    starSize = Math.random() * 2.5 + 1.5; // Medianas
+                    starClass = 'medium';
+                } else {
+                    starSize = Math.random() * 3 + 2.5; // Grandes
+                    starClass = 'large';
+                }
+                
+                star.classList.add(starClass);
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = starSize + 'px';
+                star.style.height = starSize + 'px';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                star.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Funcionalidad del timeline
+        document.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            
+            const events = document.querySelectorAll('.event h2');
+            const overlay = document.getElementById('overlay');
+            let activeInfo = null;
+            
             events.forEach(event => {
-                event.addEventListener('mouseenter', function() {
+                event.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Cerrar modal activo
                     if (activeInfo) {
-                        activeInfo.classList.add('hiding');
+                        activeInfo.classList.remove('show');
+                        overlay.classList.remove('show');
+                        activeInfo = null;
                     }
+                    
+                    // Abrir nuevo modal
                     const info = this.nextElementSibling;
-                    info.classList.remove('hiding');
+                    info.classList.add('show');
+                    overlay.classList.add('show');
                     activeInfo = info;
                 });
             });
-    
-            document.addEventListener('mouseover', function(e) {
-                if (!e.target.closest('.event h2') && !e.target.closest('.event-info')) {
-                    if (activeInfo) {
-                        activeInfo.classList.add('hiding');
-                        activeInfo = null;
-                    }
+            
+            // Cerrar modal al tocar overlay
+            overlay.addEventListener('click', () => {
+                if (activeInfo) {
+                    activeInfo.classList.remove('show');
+                    overlay.classList.remove('show');
+                    activeInfo = null;
                 }
             });
+            
+            // Cerrar modal con tecla Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && activeInfo) {
+                    activeInfo.classList.remove('show');
+                    overlay.classList.remove('show');
+                    activeInfo = null;
+                }
+            });
+            
+            // Prevenir que el modal se cierre al tocar dentro de él
+            document.querySelectorAll('.event-info').forEach(info => {
+                info.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            });
         });
-        </script>
-    </body>
-    </html>
+        
+        // Sin efectos de parallax, más simple
+        document.addEventListener('scroll', () => {
+            // Mantener simple sin efectos complejos
+        });
+    </script>
 </body>
 </html>

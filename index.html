@@ -8,72 +8,114 @@
     <link rel="icon" href="ima/skele.png" type="image/x-icon">
 </head>
 <body>
-    <!-- Video de fondo -->
-    <video autoplay muted loop id="background-video">
-        <source src="ima/" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video.
-    </video>
-    <!-- Título central -->
-    <div class="center-title">
-        <h1>Bienvenido Corazón</h1>
+    <!-- Partículas de fondo -->
+    <div class="particles">
+        <!-- Las partículas se generarán con JavaScript -->
     </div>
-    <!-- Enlace bajo el título central -->
-    <div class="sub-title-container">
-        <h2 class="sub-title">Comienza por aquí My Boy
-        </h2>
-        <a href="you.html" class="sub-option">Reasons</a>
-    </div>
-    <!-- Segundo título y enlaces -->
-    <div class="second-title-container">
-        <h2 class="second-title">Son Sorpresa, Elige el que te llame la atención</h2>
-        <div class="options">
-            <a href="yourmusic.html" class="option purple-pink" data-visited="false">???</a>
-            <a href="time.html" class="option gray-white" data-visited="false">???</a>
-            <a href="sysforu.html" class="option orange-yellow" data-visited="false">???</a>
+
+    <div class="main-container">
+        <!-- Título central -->
+        <div class="center-title">
+            <h1>Bienvenido Corazón</h1>
+        </div>
+
+        <!-- Enlace bajo el título central -->
+        <div class="sub-title-container">
+            <h2 class="sub-title">Comienza por aquí..</h2>
+            <a href="you.html" class="sub-option">Reasons</a>
+        </div>
+
+        <!-- Segundo título y enlaces -->
+        <div class="second-title-container">
+            <h2 class="second-title">Son Sorpresa, Elige el que te llame la atención</h2>
+            <div class="options">
+                <a href="yourmusic.html" class="option purple-pink" data-visited="false">???</a>
+                <a href="time.html" class="option gray-white" data-visited="false">???</a>
+                <a href="sysforu.html" class="option orange-yellow" data-visited="false">???</a>
+            </div>
+        </div>
+
+        <!-- Nuevo título y botón (inicialmente ocultos) -->
+        <div id="new-content-1" class="new-content" style="display: none;">
+            <h2 class="new-title">Oh..Bellas Artes!</h2>
+            <a href="galeryoflove.html" class="sub-option">Museum</a>
+        </div>
+
+        <!-- Segundo nuevo título y botón (inicialmente ocultos) -->
+        <div id="new-content-2" class="new-content" style="display: none;">
+            <h2 class="new-title">Y algo más.. ♥</h2>
+            <a href="thanksyou.html" class="sub-option">Thanks You♥</a>
         </div>
     </div>
-    <!-- Nuevo título y botón (inicialmente ocultos) -->
-    <div id="new-content-1" class="new-content" style="display: none;">
-        <h2 class="new-title">Oh..Bellas Artes!</h2>
-        <a href="galeryoflove.html" class="sub-option">Museum</a>
-    </div>
-    <!-- Segundo nuevo título y botón (inicialmente ocultos) -->
-    <div id="new-content-2" class="new-content" style="display: none;">
-        <h2 class="new-title">Y algo más.. ♥</h2>
-        <a href="thanksyou.html" class="sub-option">Thanks You♥</a>
-    </div>
+
     <!-- Marca especial -->
     <div class="marca-especial">S♥</div>
+
     <script>
+        // Crear partículas de fondo
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            const particleCount = window.innerWidth < 768 ? 15 : 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            
             const options = document.querySelectorAll('.option');
-            const newContent1 = document.getElementById('new-content-1');
+           
             const newContent2 = document.getElementById('new-content-2');
-   
+
             function checkAllVisited() {
                 const allVisited = Array.from(options).every(option => 
                     localStorage.getItem(option.getAttribute('href')) === 'visited'
                 );
                 if (allVisited) {
-                    newContent1.style.display = 'block';
-                    newContent2.style.display = 'block';
+                    setTimeout(() => {
+                        newContent1.style.display = 'block';
+                    }, 500);
+                    setTimeout(() => {
+                        newContent2.style.display = 'block';
+                    }, 1000);
                 }
             }
-   
+
             options.forEach(option => {
                 if (localStorage.getItem(option.getAttribute('href'))) {
                     option.classList.add('visited');
                 }
-   
+
                 option.addEventListener('click', () => {
                     localStorage.setItem(option.getAttribute('href'), 'visited');
                     option.classList.add('visited');
                     checkAllVisited();
                 });
             });
-   
+
             // Comprobar al cargar la página si todos ya han sido visitados
             checkAllVisited();
+
+            // Efecto táctil para móvil
+            if ('ontouchstart' in window) {
+                document.querySelectorAll('.sub-option, .option').forEach(element => {
+                    element.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.95)';
+                    });
+                    
+                    element.addEventListener('touchend', function() {
+                        this.style.transform = '';
+                    });
+                });
+            }
         });
     </script>
 </body>
